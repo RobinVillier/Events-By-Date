@@ -1,0 +1,168 @@
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+body {
+    background: linear-gradient(hsl(0, 0%, 35%) 70%, hsl(0, 0%, 25%));
+    background-attachment: fixed;
+
+    height: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.btn-primary{
+    border: 0;
+    --bs-btn-bg: hsl(0, 0%, 15%);
+    --bs-btn-hover-bg: hsl(0, 0%, 20%);
+    --bs-btn-active-bg: hsl(0, 0%, 10%);
+    gap: 30px;
+}
+
+.current-btn {
+    border: 0;
+    --bs-btn-bg: #1ca163;
+    --bs-btn-hover-bg: #23c479;
+    --bs-btn-active-bg: #147045;
+    gap: 30px;
+}
+
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 14px 0;
+    gap: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+}
+
+.search-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 10vh;
+}
+
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input {
+    width: 130px;
+    height: 36px;
+    padding: 0 32px 0 12px;
+    border: 1px solid hsl(0, 0%, 35%);
+    border-radius: 18px;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #bfbfbf;
+}
+
+.search-input:focus {
+    border: 1px solid hsl(0, 0%, 100%);
+}
+
+.search-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    background-image: url('/images/search-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.search-input[type=number]::-webkit-outer-spin-button,
+.search-input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.response-group {
+    align-self: center;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.response-card {
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border: 2px solid hsl(210, 14%, 89%);
+    border-radius: 8px;
+
+    padding: 20px;
+}
+
+
+.response-card > h1 {
+    color: #1e1e1e;
+    font-size: 20px;
+}
+
+.response-card p {
+    color: #757575;
+    font-size: 30px ;
+    font-weight: 600;
+}
+
+.wikipedia-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wiki-link {
+    width: 64px;
+    height: 64px;
+    border: 2px solid hsl(0, 0%, 15%);
+    background-color: hsl(0, 0%, 88%);
+
+    background-image: url('/images/wiki-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 5px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.wiki-link:hover {
+    border: 2px solid #2ae28c;
+}
+
+.higlhighted-text {
+    color: #2ae28c; 
+    font-weight: 600;
+}

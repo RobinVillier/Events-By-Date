@@ -1,0 +1,63 @@
+<html data-bs-theme="dark">
+    <head>
+        <title>Events By Date</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="" href="/styles/style.css">
+    </head>
+    <body>
+        <div class="form-area">
+            <form id="myForm" method="post" action="/submit">
+                <div class="search-group">
+                    <div class="search-wrapper">
+                        <input type="number" name="day" class="search-input day" placeholder="Day">
+                    </div>
+                    <div class="search-wrapper">
+                        <input type="number" name="month" class="search-input month" placeholder="Month">
+                    </div>
+                </div>
+
+                <div class="buttons-group">
+                    <button class="btn <%= locals.selectedAction === 'events' ? 'current-btn' : 'btn-primary' %>" type="submit" name="action" value="events">
+                        Events
+                    </button>
+
+                    <button class="btn <%= locals.selectedAction === 'births' ? 'current-btn' : 'btn-primary' %>" type="submit" name="action" value="births">
+                        Births
+                    </button>
+
+                    <button class="btn <%= locals.selectedAction === 'deaths' ? 'current-btn' : 'btn-primary' %>" type="submit" name="action" value="deaths">
+                        Deaths
+                    </button>
+                </div>
+            </form>
+        </div>
+        <% if (locals.data && locals.date) { %>
+        <p>
+            There are 
+            <span class="higlhighted-text"><%= data.length %></span> 
+            results for 
+            <span class="higlhighted-text"><%= date %></span>.
+        </p>
+        <div class="response-group">
+                <% for( let info = 0; info < data.length; info++ ) { %>
+                <div class="response-card">
+                    <p><%= data[info].year %></p>
+                    <h1><span class="higlhighted-text">Description : </span> <%= data[info].description %></h1>
+                    <div class="wikipedia-group">
+                        <% for( let index = 0; index < data[info].wikipedia.length; index++ ) { %>
+                            <a href='<%= data[info].wikipedia[index].wikipedia %>' target="_blank" class="wiki-link"></a>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        <% } %>
+        <footer>
+            Events By Date © Robin Villier - 2025
+        </footer>
+        <script src="/scripts/script.js"></script>
+    </body>
+</html>
