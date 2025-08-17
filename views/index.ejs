@@ -18,7 +18,10 @@
                         <input type="number" name="month" class="search-input month" placeholder="Month">
                     </div>
                 </div>
-
+                <p id="example-phrase">Input a date using this format : 
+                    <span class="higlhighted-text">Day (1-31) | Month (1-12).</span>
+                    Eg : 17 4 = April 17.
+                </p>
                 <div class="buttons-group">
                     <button class="btn <%= locals.selectedAction === 'events' ? 'current-btn' : 'btn-primary' %>" type="submit" name="action" value="events">
                         Events
@@ -44,6 +47,10 @@
         <div class="response-group">
                 <% for( let info = 0; info < data.length; info++ ) { %>
                 <div class="response-card">
+                    <p><%= data[info].wiki_info.title %></p>
+                    <a href='<%= data[info].wiki_info.url %>' target="_blank">
+                        <img src=<%= data[info].wiki_info.thumbnail %> alt="Thumbnail for each corresponding wikipedia article.">
+                    </a>
                     <p><%= data[info].year %></p>
                     <h1><span class="higlhighted-text">Description : </span> <%= data[info].description %></h1>
                     <div class="wikipedia-group">

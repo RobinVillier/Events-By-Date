@@ -40,7 +40,7 @@ body {
 .buttons-group {
     display: flex;
     justify-content: center;
-    padding: 14px 0 14px 0;
+    /* padding: 14px 0 14px 0; */
     gap: 10px;
 }
 
@@ -131,15 +131,26 @@ footer {
     font-size: 20px;
 }
 
-.response-card p {
+.response-card > p {
     color: #757575;
     font-size: 30px ;
     font-weight: 600;
 }
 
+.response-card img {
+    border: 3px solid white;
+    width: 260px;
+    border-radius: 20px;
+}
+
+.response-card img:hover {
+    border: 3px solid #2ae28c;
+}
+
 .wikipedia-group {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -165,4 +176,8 @@ footer {
 .higlhighted-text {
     color: #2ae28c; 
     font-weight: 600;
+}
+
+#example-phrase {
+    margin: 10px 20px 20px 20px;
 }
