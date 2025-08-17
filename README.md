@@ -1,8 +1,9 @@
-# README
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/11894e08-34ab-4efb-8742-2c8bc323c2cc" /># README
 
 # 📅 Historical Events App
 
 A simple web app that lets users input a day and month of the year, then displays **historical events**, **birthdays**, or **deaths** that happened on that date.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f5a2c1f6-3bd9-4923-aa56-dd006f036ac3" />
 
 ## 🚀 Features
 
