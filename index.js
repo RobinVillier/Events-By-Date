@@ -32,8 +32,6 @@ app.post("/submit", async (req, res) => {
       const wiki_info = await getWikipediaInfo(wiki_title);
       wiki_info.url = data[index].wikipedia[0].wikipedia
       data[index].wiki_info = wiki_info;
-      console.log(wiki_info);
-      
     }
     
     res.render("index.ejs", { 
