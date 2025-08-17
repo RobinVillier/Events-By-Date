@@ -25,13 +25,15 @@ app.post("/submit", async (req, res) => {
 
   try {
     const result = await axios.get(`${API_URL}/${month}/${day}/${action}.json`);
-    const data = result["data"][action].reverse().slice(0, 10)
-    
+    const data = result["data"][action].reverse().slice(0, 50)
+
     for (let index = 0; index < data.length; index++) {
       const wiki_title = data[index].wikipedia[0].title
       const wiki_info = await getWikipediaInfo(wiki_title);
       wiki_info.url = data[index].wikipedia[0].wikipedia
       data[index].wiki_info = wiki_info;
+      console.log(wiki_info);
+      
     }
     
     res.render("index.ejs", { 

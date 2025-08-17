@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="" href="/styles/style.css">
     </head>
     <body>
+        <h1 class="higlhighted-text" id="title">Events By Date</h1>
         <div class="form-area">
             <form id="myForm" method="post" action="/submit">
                 <div class="search-group">
@@ -48,9 +49,11 @@
                 <% for( let info = 0; info < data.length; info++ ) { %>
                 <div class="response-card">
                     <p><%= data[info].wiki_info.title %></p>
-                    <a href='<%= data[info].wiki_info.url %>' target="_blank">
-                        <img src=<%= data[info].wiki_info.thumbnail %> alt="Thumbnail for each corresponding wikipedia article.">
-                    </a>
+                    <% if ( data[info].wiki_info.thumbnail !== null ) { %>
+                        <a href='<%= data[info].wiki_info.url %>' target="_blank">
+                            <img src=<%= data[info].wiki_info.thumbnail %> alt="Thumbnail for each corresponding wikipedia article.">
+                        </a>
+                    <% } %>
                     <p><%= data[info].year %></p>
                     <h1><span class="higlhighted-text">Description : </span> <%= data[info].description %></h1>
                     <div class="wikipedia-group">

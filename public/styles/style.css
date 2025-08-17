@@ -21,6 +21,10 @@ body {
     text-align: center;
 }
 
+#title {
+    padding: 5vh 0;
+}
+
 .btn-primary{
     border: 0;
     --bs-btn-bg: hsl(0, 0%, 15%);
@@ -54,7 +58,6 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    padding-top: 10vh;
 }
 
 .search-wrapper {
